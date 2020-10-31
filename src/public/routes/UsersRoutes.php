@@ -32,10 +32,11 @@ $app->post('/userauth', function($request, $response){
             while($row = $result->fetch_assoc())
             {
                 $userID = $row["UserID"];
+                $configID = $row["ConfigID"];
             }
         };
         $result->free_result();
-        $validArr = array("valid"=>$userValid, "UserID"=>$userID);
+        $validArr = array("valid"=>$userValid, "UserID"=>$userID, "ConfigID"=>$configID);
         // $validArr = array("valid"=>$userValid);
         $responseBody = json_encode($validArr);
         
