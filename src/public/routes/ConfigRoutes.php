@@ -58,16 +58,16 @@ $app->post('/getconfig', function($request, $response){
             while($row = $result->fetch_assoc())
             {
                 $workConfig = array(
-                    "WorkStart"=>$row["WorkStart"],
-                    "FirstBreakStart"=>$row["FirstBreakStart"],
-                    "FirstBreakEnd"=>$row["FirstBreakEnd"],
-                    "SecondBreakStart"=>$row["SecondBreakStart"],
-                    "SecondBreakEnd"=>$row["SecondBreakEnd"],
-                    "LunchBreakStart"=>$row["LunchBreakStart"],
-                    "LunchBreakEnd"=>$row["LunchBreakEnd"],
-                    "ThirdBreakStart"=>$row["ThirdBreakStart"],
-                    "ThirdBreakEnd"=>$row["ThirdBreakEnd"],
-                    "WorkEnd"=>$row["WorkEnd"],
+                    "WorkStart"=> array("Name"=>"Work Start","Time"=>$row["WorkStart"]),
+                    "FirstBreakStart"=> array("Name"=>"First Break Start","Time"=>$row["FirstBreakStart"]),
+                    "FirstBreakEnd"=> array("Name"=>"First Break End","Time"=>$row["FirstBreakEnd"]),
+                    "SecondBreakStart"=> array("Name"=>"Second Break Start","Time"=>$row["SecondBreakStart"]),
+                    "SecondBreakEnd"=> array("Name"=>"Second Break End","Time"=>$row["SecondBreakEnd"]),
+                    "LunchBreakStart"=> array("Name"=>"Lunch Break Start","Time"=>$row["LunchBreakStart"]),
+                    "LunchBreakEnd"=> array("Name"=>"Lunch Break End","Time"=>$row["LunchBreakEnd"]),
+                    "ThirdBreakStart"=> array("Name"=>"Third Break Start","Time"=>$row["ThirdBreakStart"]),
+                    "ThirdBreakEnd"=> array("Name"=>"Third Break End","Time"=>$row["ThirdBreakEnd"]),
+                    "EndOfWork"=> array("Name"=>"End Of Work","Time"=>$row["EndOfWork"]),
                 );
             }
         };
